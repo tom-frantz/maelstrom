@@ -2,22 +2,27 @@ use bevy::prelude::StartupStage::PostStartup;
 use bevy::prelude::*;
 
 use maelstrom::create_app;
+use maelstrom::entities::spaceships::{Spaceship, SpaceshipBuilder};
 use maelstrom::ui::sprites::spaceships::{
     create_spaceship_sprite, SpaceshipSprite, SpaceshipSpriteHandles,
 };
 
 /// interesting
 fn create_spaceship_sprites(mut commands: Commands, sprite_handles: Res<SpaceshipSpriteHandles>) {
-    let sprite = create_spaceship_sprite(0.0, 0.0, &SpaceshipSprite::Programmer1, &sprite_handles);
-    commands.spawn_bundle(sprite);
+    Spaceship::build()
+        .sprite(SpaceshipSprite::Programmer1)
+        .pos(0.0, 0.0)
+        .build(&mut commands, &sprite_handles);
 
-    let sprite =
-        create_spaceship_sprite(100.0, 0.0, &SpaceshipSprite::Programmer2, &sprite_handles);
-    commands.spawn_bundle(sprite);
+    Spaceship::build()
+        .sprite(SpaceshipSprite::Programmer2)
+        .pos(50.0, 0.0)
+        .build(&mut commands, &sprite_handles);
 
-    let sprite =
-        create_spaceship_sprite(200.0, 0.0, &SpaceshipSprite::Programmer3, &sprite_handles);
-    commands.spawn_bundle(sprite);
+    Spaceship::build()
+        .sprite(SpaceshipSprite::Programmer3)
+        .pos(100.0, 0.0)
+        .build(&mut commands, &sprite_handles);
 }
 
 fn main() {

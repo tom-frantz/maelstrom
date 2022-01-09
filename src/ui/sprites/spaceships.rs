@@ -3,11 +3,17 @@ use std::collections::HashMap;
 use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
 
-#[derive(EnumIter, Debug, PartialEq, Eq, Hash)]
+#[derive(EnumIter, Debug, PartialEq, Eq, Hash, Clone, Copy, Component)]
 pub enum SpaceshipSprite {
     Programmer1,
     Programmer2,
     Programmer3,
+}
+
+impl Default for SpaceshipSprite {
+    fn default() -> Self {
+        SpaceshipSprite::Programmer1
+    }
 }
 
 impl SpaceshipSprite {
@@ -16,6 +22,14 @@ impl SpaceshipSprite {
             SpaceshipSprite::Programmer1 => "programmer-1.png",
             SpaceshipSprite::Programmer2 => "programmer-2.png",
             SpaceshipSprite::Programmer3 => "programmer-3.png",
+        }
+    }
+
+    pub const fn size(&self) -> (u16, u16) {
+        match self {
+            SpaceshipSprite::Programmer1 => (16, 16),
+            SpaceshipSprite::Programmer2 => (16, 16),
+            SpaceshipSprite::Programmer3 => (32, 64),
         }
     }
 

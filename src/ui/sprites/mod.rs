@@ -2,10 +2,16 @@ use crate::ui::sprites::spaceships::create_sprite_handles;
 use bevy::prelude::StartupStage::Startup;
 use bevy::prelude::*;
 
+pub mod interactions;
 pub mod spaceships;
 
+#[derive(Component)]
+pub(super) struct MainCamera;
+
 fn spawn_camera(mut commands: Commands) {
-    commands.spawn_bundle(OrthographicCameraBundle::new_2d());
+    commands
+        .spawn_bundle(OrthographicCameraBundle::new_2d())
+        .insert(MainCamera);
 }
 
 pub(super) struct UiSpritesPlugin;

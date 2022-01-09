@@ -5,6 +5,7 @@
 use crate::ui::UiPlugin;
 use bevy::prelude::*;
 
+pub mod entities;
 pub mod mechanics;
 pub mod ui;
 
