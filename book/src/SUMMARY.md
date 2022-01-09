@@ -1,3 +1,4 @@
-# Summary
+# Maelstrom
 
-- [Chapter 1](./chapter_1.md)
+- [The Manual](the_manual.md)
+- [The Dream](the_dream.md)

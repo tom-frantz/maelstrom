@@ -1,8 +1,8 @@
 # Maelstrom 
 
 ## Dependencies
-- Rust.
-- Probs more later but for now, rust.
+- [Rust](https://www.rust-lang.org/tools/install)
+- [mdBook](https://rust-lang.github.io/mdBook/guide/installation.html)
 
 ## How To Run
 ```shell
@@ -20,4 +20,7 @@ cargo run --package maelstrom --bin test
 ```shell
 # To read what little documentation I've added in so far.
 cargo doc --open
+
+# To read the book
+mdbook serve --open book
 ```
