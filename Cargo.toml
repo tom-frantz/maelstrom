@@ -1,6 +1,7 @@
 [package]
 name = "maelstrom"
 version = "0.1.0"
+authors = ["Tom Frantz <thomas.albert.frantz@gmail.com>"]
 edition = "2021"
 
 [dependencies]
