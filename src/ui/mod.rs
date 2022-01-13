@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 use crate::ui::interface::UiInterfacePlugin;
 use crate::ui::sprites::UiSpritesPlugin;
-use crate::ui::utils::interaction_generator;
+use crate::ui::utils::{interaction_generator, WorldClickEvent};
 
 pub mod interface;
 pub mod sprites;
@@ -12,7 +12,13 @@ impl Plugin for UiPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugin(UiSpritesPlugin)
             .add_plugin(UiInterfacePlugin)
-            .add_system(interaction_generator);
+            .add_event::<(WorldClickEvent, Entity)>()
+            .add_system(interaction_generator)
+            .add_system(|mut events: EventReader<(WorldClickEvent, Entity)>| {
+                for event in events.iter() {
+                    println!("WOW READING THE EVENT: {:?}", *event)
+                }
+            });
     }
 }
 
@@ -23,8 +29,19 @@ pub(crate) mod utils {
     use crate::ui::sprites::spaceships::SpaceshipSprite;
     use crate::ui::sprites::MainCamera;
 
+    #[derive(Copy, Clone, Debug)]
+    pub enum WorldClickEvent {
+        Spaceship,
+    }
+
     #[derive(Component)]
-    pub struct Clickable;
+    pub struct Clickable(Size, WorldClickEvent);
+
+    impl Clickable {
+        pub fn new(size: Size, event: WorldClickEvent) -> Self {
+            Clickable(size, event)
+        }
+    }
 
     /// Stolen from https://bevy-cheatbook.github.io/cookbook/cursor2world.html
     fn get_world_pos_from_cursor(
@@ -79,15 +96,19 @@ pub(crate) mod utils {
         windows: Res<Windows>,
         mouse_buttons: Res<Input<MouseButton>>,
         q_camera: Query<&Transform, With<MainCamera>>,
-        q_clickable: Query<(&Transform, &SpaceshipSprite), With<Clickable>>,
+        q_clickable: Query<(Entity, &Transform, &Clickable)>,
+        mut click_events: EventWriter<(WorldClickEvent, Entity)>,
     ) {
         if mouse_buttons.just_pressed(MouseButton::Left) {
             if let Some(cursor_pos) = get_world_pos_from_cursor(windows, q_camera) {
-                for (transform, texture) in q_clickable.iter() {
-                    let size = texture.size();
-
-                    if is_interaction(cursor_pos, transform, (size.0 as f32, size.1 as f32)) {
-                        println!("clicked on clickable: {:?}", transform)
+                for (entity, transform, clickable) in q_clickable.iter() {
+                    if is_interaction(
+                        cursor_pos,
+                        transform,
+                        (clickable.0.width, clickable.0.height),
+                    ) {
+                        println!("clicked on clickable: {:?}", transform);
+                        click_events.send((clickable.1, entity));
                     }
                 }
             }

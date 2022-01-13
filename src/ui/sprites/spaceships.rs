@@ -25,11 +25,11 @@ impl SpaceshipSprite {
         }
     }
 
-    pub const fn size(&self) -> (u16, u16) {
+    pub fn size(&self) -> Size {
         match self {
-            SpaceshipSprite::Programmer1 => (16, 16),
-            SpaceshipSprite::Programmer2 => (16, 16),
-            SpaceshipSprite::Programmer3 => (32, 64),
+            SpaceshipSprite::Programmer1 => Size::new(16.0, 16.0),
+            SpaceshipSprite::Programmer2 => Size::new(16.0, 16.0),
+            SpaceshipSprite::Programmer3 => Size::new(32.0, 64.0),
         }
     }
 

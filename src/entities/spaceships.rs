@@ -1,7 +1,7 @@
 use crate::ui::sprites::spaceships::{
     create_spaceship_sprite, SpaceshipSprite, SpaceshipSpriteHandles,
 };
-use crate::ui::utils::Clickable;
+use crate::ui::utils::{Clickable, WorldClickEvent};
 use bevy::prelude::*;
 
 #[derive(Component)]
@@ -37,11 +37,15 @@ impl SpaceshipBuilder {
         handles: &Res<SpaceshipSpriteHandles>,
     ) -> Entity {
         let sprite_bundle = create_spaceship_sprite(self.x, self.y, &self.sprite, &handles);
+
         commands
             .spawn_bundle(sprite_bundle)
             .insert(Spaceship)
-            .insert(Clickable)
-            .insert(self.sprite)
+            .insert(Clickable::new(
+                self.sprite.size(),
+                WorldClickEvent::Spaceship,
+            ))
+            // .insert(self.sprite)
             .id()
     }
 }
