@@ -1,7 +1,8 @@
+use crate::entities::Name;
+use crate::ui::interactions::{Clickable, WorldClickEvent};
 use crate::ui::sprites::spaceships::{
     create_spaceship_sprite, SpaceshipSprite, SpaceshipSpriteHandles,
 };
-use crate::ui::utils::{Clickable, WorldClickEvent};
 use bevy::prelude::*;
 
 #[derive(Component)]
@@ -17,6 +18,7 @@ impl Spaceship {
 pub struct SpaceshipBuilder {
     x: f32,
     y: f32,
+    name: String,
     sprite: SpaceshipSprite,
 }
 
@@ -31,9 +33,14 @@ impl SpaceshipBuilder {
         self
     }
 
+    pub fn name(&mut self, name: String) -> &mut Self {
+        self.name = name;
+        self
+    }
+
     pub fn build(
         &mut self,
-        mut commands: &mut Commands,
+        commands: &mut Commands,
         handles: &Res<SpaceshipSpriteHandles>,
     ) -> Entity {
         let sprite_bundle = create_spaceship_sprite(self.x, self.y, &self.sprite, &handles);
@@ -45,6 +52,7 @@ impl SpaceshipBuilder {
                 self.sprite.size(),
                 WorldClickEvent::Spaceship,
             ))
+            .insert(Name(self.name.clone()))
             // .insert(self.sprite)
             .id()
     }

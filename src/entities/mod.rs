@@ -6,3 +6,6 @@
 use bevy::prelude::*;
 
 pub mod spaceships;
+
+#[derive(Component)]
+pub struct Name(pub String);
