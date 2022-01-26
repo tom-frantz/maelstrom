@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy::window::WindowMode::BorderlessFullscreen;
+use bevy::window::WindowMode::{BorderlessFullscreen, Fullscreen};
 
 use crate::ui::interactions::{interaction_generator, WorldClickEvent};
 use crate::ui::interface::UiInterfacePlugin;
@@ -12,14 +12,7 @@ pub mod sprites;
 pub(super) struct UiPlugin;
 impl Plugin for UiPlugin {
     fn build(&self, app: &mut App) {
-        app
-            // This currently doesn't work, but will in the next update fingers crossed.
-            .insert_resource(WindowDescriptor {
-                title: "Maelstrom".to_string(),
-                mode: BorderlessFullscreen,
-                ..Default::default()
-            })
-            .add_plugin(UiSpritesPlugin)
+        app.add_plugin(UiSpritesPlugin)
             .add_plugin(UiInterfacePlugin)
             .add_event::<(WorldClickEvent, Entity)>()
             .add_system(interaction_generator)

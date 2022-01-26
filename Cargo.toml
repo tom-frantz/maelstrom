@@ -5,7 +5,8 @@ authors = ["Tom Frantz <thomas.albert.frantz@gmail.com>"]
 edition = "2021"
 
 [dependencies]
-bevy = "0.6.0"
+bevy = { git = "https://github.com/tom-frantz/bevy.git" }
+#bevy = "0.6.0"
 num = "0.4.0"
 
 strum = "0.23"
@@ -19,4 +20,5 @@ opt-level = 3
 [profile.dev]
 opt-level = 1
 
-
+#[patch.crates-io]
+#winit = {git = "https://github.com/rust-windowing/winit.git"}

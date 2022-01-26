@@ -12,7 +12,7 @@ mod interaction;
 mod spaceship;
 mod state;
 
-pub(super) const SIDEBAR_WINDOW_WIDTH: Val = Px(500.0);
+pub(super) const SIDEBAR_WINDOW_WIDTH: Val = Px(1000.0);
 pub(super) const SIDEBAR_BORDER_WIDTH: Val = Px(5.0);
 
 pub(super) const BORDER_COLOUR: &'static str = "444";

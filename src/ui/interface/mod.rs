@@ -8,6 +8,7 @@ mod text;
 pub(self) mod ui_bundle;
 
 pub mod sidebar;
+pub mod timer;
 
 fn spawn_bundle(mut commands: Commands) {
     commands.spawn_bundle(UiCameraBundle::default());

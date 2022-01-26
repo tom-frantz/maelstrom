@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::ui::sprites::MainCamera;
+use crate::ui::sprites::{MainCamera, SPRITE_SCALE};
 
 #[derive(Copy, Clone, Debug)]
 pub enum WorldClickEvent {
@@ -51,7 +51,10 @@ fn is_interaction(
     target_transform: &Transform,
     mut target_size: (f32, f32),
 ) -> bool {
-    target_size = (target_size.0 / 2.0, target_size.1 / 2.0);
+    target_size = (
+        target_size.0 * SPRITE_SCALE / 2.0,
+        target_size.1 * SPRITE_SCALE / 2.0,
+    );
     let lower_bounds = (
         target_transform.translation.x - target_size.0,
         target_transform.translation.y - target_size.1,
