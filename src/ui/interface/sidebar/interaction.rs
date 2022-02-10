@@ -1,7 +1,6 @@
 use crate::ui::interactions::WorldClickEvent;
 use crate::ui::interface::resource::UiResource;
 use crate::ui::interface::sidebar::spaceship::{render_spaceship_info, SpaceshipQuery};
-use crate::ui::interface::sidebar::SidebarQuery;
 use crate::ui::interface::FontResource;
 use crate::GameState;
 use bevy::prelude::*;

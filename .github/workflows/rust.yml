@@ -23,4 +23,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUSTTARGET: ${{ matrix.target }}
 #          oopsies ...
-#          EXTRA_FILES: "README.md LICENSE"
+          EXTRA_FILES: "assets"
