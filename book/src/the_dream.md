@@ -17,12 +17,11 @@ You should definitely worry about the cylons coming to kill you and your entire 
 
 ### Characters
 
-- There's a pool of characters across the fleet that have personality traits, skills, and other properties that effect how they act.
-- You get to play the commander of the fleet, which follows all the other systems of characters.
-- Characters can interact and have relationships with eachother, and you can interact with them too.
-- Characters have motivations and agendas that they try to achieve within the fleet.
-- Hire characters to staff positions on the flagship and throughout the fleet, letting those characters advise you and impart their prowess through their jobs.
-- Characters can join factions, giving clout to certain groups to further their agendas.
+-   There's **a pool of characters across the fleet** that have personality traits, skills, and other properties that effect how they act.
+-   You get to **play as the commander of the fleet**, which follows all the other systems of characters.
+-   **Characters can interact** and have relationships with eachother, **and you can interact with them too**.
+-   **Characters have motivations and agendas** that they try to achieve within the fleet.
+-   **Hire characters to staff positions** on the flagship and throughout the fleet, **and those characters advise you and impart their prowess through their jobs.**
 
 ### Spaceships & The Fleet
 
