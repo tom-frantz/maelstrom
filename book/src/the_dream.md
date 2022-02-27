@@ -24,15 +24,22 @@ You should definitely worry about the cylons coming to kill you and your entire 
 - **Hire characters to staff positions** on the flagship and throughout the fleet, **and those characters advise you and impart their prowess through their jobs.**
 
 ### Resource Management
-- **Manage military and civilian resources**
+
+- **Manage military and civilian resources** such as food, fuel, and ammunition.
+- **Use the limited industrial capabilities of the fleet to refine raw resources** into more meaningful goods. You can't refine everything, so choose wisely.
+- **Control rations and other stockpiles** in order not to run out.
 
 ### Civilians, Government, and Command
+
 - **There exists two 'governments' that the player can interact with. The Civilian Government and the Military Command**.
 - **A civilian government outlines the needs of the fleet**, specifically the civilian population. The government 
 - **The civilian government can demand greater resources from the military command** in times of great supply as a mechanic to increase the difficulty. 
 - **The civilian government can also ask for less in times of great pressure**.
+- **Interact with the civilian government to control aspects of civilian life** such as rations, political freedoms, goods manufacturing, etc.
 
-- **The military command can change it's 'bureaucracy'** across axis of centralisation and doctrine, **in which impacts the way characters contribute to it**
+- **The military command is in charge of military operations as well as resourcing and stockpiling**.
+- **The military command can change it's 'bureaucracy'** across axis of centralisation and doctrine, **in which impacts the way characters contribute to it**.
+- **Enact martial law to manage more direct concerns**, such as protests or crime, **within the civilian government**.
 
 ### Story and Events
 
