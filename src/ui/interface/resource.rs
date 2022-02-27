@@ -1,4 +1,5 @@
-use crate::ui::interface::ui_bundle::UiBundle;
+use crate::ui::interface::sidebar::{CloseButton, Sidebar, SidebarContainer};
+use crate::ui::interface::{MarkedUi, UiBundle};
 use crate::GameState;
 use bevy::prelude::*;
 
@@ -21,10 +22,20 @@ impl UiResource {
     pub fn get_or_create_sidebar_content(
         &mut self,
         commands: &mut Commands,
-        game_state: ResMut<State<GameState>>,
+        mut game_state: ResMut<State<GameState>>,
     ) -> Entity {
         if let None = self.content {
-            UiBundle::create_empty_sidebar(commands, self, game_state);
+            let mut root = SidebarContainer::spawn_bundle(commands);
+            let mut content: Option<Entity> = None;
+
+            root.with_children(|mut root| {
+                root.spawn_bundle(CloseButton::get_bundle());
+                let content_entity = root.spawn_bundle(Sidebar::get_bundle()).id();
+                content = Some(content_entity);
+            });
+
+            self.open_sidebar(root.id(), content.unwrap());
+            game_state.push(GameState::SidebarOpen).unwrap();
         }
 
         self.content.unwrap()

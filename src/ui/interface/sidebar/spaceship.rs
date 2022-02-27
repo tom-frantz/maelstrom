@@ -1,8 +1,5 @@
 use crate::entities::Name;
-use crate::ui::interface::resource::UiResource;
-use crate::ui::interface::sidebar::SidebarQuery;
 use crate::ui::interface::text::{FontResource, MaelstromFont};
-use bevy::ecs::query::QueryItem;
 use bevy::ecs::system::EntityCommands;
 use bevy::prelude::Val::Px;
 use bevy::prelude::*;

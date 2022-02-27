@@ -1,5 +1,4 @@
 use bevy::prelude::*;
-use bevy::window::WindowMode::{BorderlessFullscreen, Fullscreen};
 
 use crate::ui::interactions::{interaction_generator, WorldClickEvent};
 use crate::ui::interface::UiInterfacePlugin;
