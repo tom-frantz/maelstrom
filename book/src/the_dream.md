@@ -17,14 +17,27 @@ You should definitely worry about the cylons coming to kill you and your entire 
 
 ### Characters
 
--   There's **a pool of characters across the fleet** that have personality traits, skills, and other properties that effect how they act.
--   You get to **play as the commander of the fleet**, which follows all the other systems of characters.
--   **Characters can interact** and have relationships with eachother, **and you can interact with them too**.
--   **Characters have motivations and agendas** that they try to achieve within the fleet.
--   **Hire characters to staff positions** on the flagship and throughout the fleet, **and those characters advise you and impart their prowess through their jobs.**
+- There's **a pool of characters across the fleet** that have personality traits, skills, and other properties that effect how they act.
+- You get to **play as the commander of the fleet**, which follows all the other systems of characters.
+- **Characters can interact** and have relationships with eachother, **and you can interact with them too**.
+- **Characters have motivations and agendas** that they try to achieve within the fleet.
+- **Hire characters to staff positions** on the flagship and throughout the fleet, **and those characters advise you and impart their prowess through their jobs.**
 
-### Spaceships & The Fleet
+### Resource Management
+- **Manage military and civilian resources**
 
-### Battles
+### Civilians, Government, and Command
+- **There exists two 'governments' that the player can interact with. The Civilian Government and the Military Command**.
+- **A civilian government outlines the needs of the fleet**, specifically the civilian population. The government 
+- **The civilian government can demand greater resources from the military command** in times of great supply as a mechanic to increase the difficulty. 
+- **The civilian government can also ask for less in times of great pressure**.
+
+- **The military command can change it's 'bureaucracy'** across axis of centralisation and doctrine, **in which impacts the way characters contribute to it**
+
+### Story and Events
+
+### Defense and Battles
 
 ### Exploration
+
+### Technology and Enhancements
